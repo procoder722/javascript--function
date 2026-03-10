@@ -1,0 +1,254 @@
+JavaScript has many built-in functions and ways to create functions. Instead of listing thousands, the best way is to learn the main types of functions and commonly used built-in functions with examples. Below is a clear guide with correct examples.
+
+1. Normal Function (Function Declaration)
+
+The most common way to create a function.
+
+function greet(name) {
+  return "Hello " + name;
+}
+
+console.log(greet("Rahul"));
+
+Output:
+Hello Rahul
+
+
+2. Function Expression
+
+Function stored inside a variable.
+
+const add = function(a, b) {
+  return a + b;
+};
+
+console.log(add(5, 3));
+
+Output:
+8
+
+
+3. Arrow Function (ES6)
+
+Short syntax.
+
+const multiply = (a, b) => {
+  return a * b;
+};
+
+console.log(multiply(4, 5));
+
+Shorter version:
+
+const square = x => x * x;
+
+console.log(square(6));
+
+Output:
+36
+
+
+4. Anonymous Function
+
+Function without a name.
+
+setTimeout(function() {
+  console.log("Executed after 2 seconds");
+}, 2000);
+
+
+5. Immediately Invoked Function (IIFE)
+
+Runs immediately.
+
+(function() {
+  console.log("I run immediately!");
+})();
+
+
+6. Callback Function
+
+Function passed into another function.
+
+function processUser(name, callback) {
+  console.log("Processing user...");
+  callback(name);
+}
+
+function greet(name) {
+  console.log("Hello " + name);
+}
+
+processUser("Amit", greet);
+
+
+7. Recursive Function
+
+Function calling itself.
+
+function factorial(n) {
+  if (n === 1) return 1;
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(5));
+
+Output:
+120
+
+
+8. Generator Function
+
+Uses function*.
+
+function* numbers() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = numbers();
+
+console.log(gen.next().value);
+console.log(gen.next().value);
+
+Output:
+1
+2
+
+
+9. Async Function
+
+Used with promises.
+
+async function getData() {
+  return "Data received";
+}
+
+getData().then(console.log);
+
+
+10. Constructor Function
+
+Used to create objects.
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const p1 = new Person("Rahul", 25);
+
+console.log(p1.name);
+
+
+11. Higher Order Function
+
+Function that takes or returns another function.
+
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+console.log(calculate(5, 3, add));
+
+
+12. Built-in JavaScript Functions (Common Ones)
+
+parseInt()
+
+console.log(parseInt("100"));
+
+Output:
+100
+
+
+parseFloat()
+
+console.log(parseFloat("10.55"));
+
+Output:
+10.55
+
+
+isNaN()
+
+console.log(isNaN("hello"));
+
+Output:
+true
+
+
+eval()
+
+console.log(eval("5 + 5"));
+
+Output:
+10
+
+
+13. Array Functions (Very Important)
+
+map()
+
+const nums = [1,2,3];
+
+const result = nums.map(n => n * 2);
+
+console.log(result);
+
+Output:
+[2,4,6]
+
+
+filter()
+
+const nums = [1,2,3,4];
+
+const even = nums.filter(n => n % 2 === 0);
+
+console.log(even);
+
+Output:
+[2,4]
+
+
+reduce()
+
+const nums = [1,2,3,4];
+
+const sum = nums.reduce((total, n) => total + n, 0);
+
+console.log(sum);
+
+Output:
+10
+
+
+14. String Functions
+
+toUpperCase()
+
+console.log("hello".toUpperCase());
+
+Output:
+HELLO
+
+
+includes()
+
+console.log("javascript".includes("script"));
+
+Output:
+true
+
+
+15. Math Functions
+
+console.log(Math.random());
+console.log(Math.floor(4.7));
+console.log(Math.max(10, 20, 5));
